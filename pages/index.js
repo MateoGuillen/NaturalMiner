@@ -17,6 +17,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
 
+
+import { pink } from '@mui/material/colors';
+
+import Swal from 'sweetalert2'
+
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -101,6 +106,8 @@ const Homepage = () => {
     );
   };
 
+  
+
   return (
     <Container maxWidth="sm">
     <h1>This is a Container Box</h1>
@@ -148,7 +155,21 @@ const Homepage = () => {
           ))}
         </Select>
       </FormControl>
-
+        
+      <Checkbox {...label} defaultChecked />
+      <Checkbox {...label} defaultChecked color="secondary" />
+      <Checkbox {...label} defaultChecked color="success" />
+      <Checkbox {...label} defaultChecked color="default" />
+      <Checkbox
+        {...label}
+        defaultChecked
+        sx={{
+          color: pink[800],
+          '&.Mui-checked': {
+            color: pink[600],
+          },
+        }}
+      />
     </Container>
   );
 };
